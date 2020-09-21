@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const cookieParser = require("cookie-parser");
 const MongoClient = require("mongodb").MongoClient;
+const nodemailer = require("nodemailer");
 
 app.use(
   bodyParser.urlencoded({
@@ -20,6 +21,14 @@ const PORT = process.env.PORT || 3000;
 const connectionString =
   "mongodb+srv://admin:admin@cer.4g7j9.mongodb.net/CER?retryWrites=true&w=majority";
 
+let mailTransporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "yusuffjamal3@gmail.com",
+    pass: "hvyccurmwebkqeyv",
+  },
+});
+
 MongoClient.connect(connectionString, {
   useUnifiedTopology: true,
 })
@@ -29,7 +38,7 @@ MongoClient.connect(connectionString, {
     const db = client.db("CER");
     const membersTable = db.collection("Members");
 
-    app.get("/send", (req, res) => {
+    app.post("/send", (req, res) => {
       let currentDate = new Date();
 
       let months = [
@@ -72,18 +81,44 @@ MongoClient.connect(connectionString, {
         amount_paid: req.body.amount,
       };
 
-
       membersTable
         .insertOne(membership_details)
         .then(() => {
           // res.render('pay.ejs', {values: membership_details});
-          res.redirect('/');
+          res.redirect("/");
         })
         .catch((err) => console.log(err.message));
     });
-    var server = app.listen(PORT, () => {
-      var host = server.address().address;
-      var port = server.address().port;
+
+    app.post("/contact", (req, res) => {
+      let contact_details = {
+        name: req.body.name,
+        email: req.body.email,
+        subject: req.body.subject,
+        message: req.body.message,
+      };
+
+      let mailDetails = {
+        from: contact_details.email,
+        to: "lesothocer@gmail.com",
+        subject: contact_details.subject,
+        text: contact_details.message,
+      };
+
+      mailTransporter.sendMail(mailDetails, function (err, data) {
+        if (err) {
+          console.log("Error Occurs");
+          
+        } else {
+          console.log("Email sent successfully");
+          res.redirect('email_sent.html')
+        }
+      });
+    });
+
+    const server = app.listen(PORT, () => {
+      const host = server.address().address;
+      const port = server.address().port;
 
       console.log("Example app listening at http://%s:%s", host, port);
     });
