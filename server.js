@@ -84,8 +84,8 @@ MongoClient.connect(connectionString, {
       membersTable
         .insertOne(membership_details)
         .then(() => {
-          // res.render('pay.ejs', {values: membership_details});
-          res.redirect("/");
+          res.render('pay.ejs', {values: membership_details});
+          
         })
         .catch((err) => console.log(err.message));
     });
