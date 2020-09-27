@@ -205,8 +205,8 @@
             <div class="portfolio-wrap">
               <img src="assets/img/main.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
+                <h4>CER</h4>
+                <p>--</p>
                 <div class="portfolio-links">
                   <!-- <a href="https://www.instagram.com/p/BlLj_oqA3F1/media?size=l" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a> -->
                 </div>
@@ -255,18 +255,58 @@
       </div>
     </section>
 
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>See CER</h2>
+          <p>Upcoming</p>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="offset-lg-2 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/WAinfo.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <!-- <a href="https://www.instagram.com/p/BlLj_oqA3F1/media?size=l" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/WAinvitation.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>CER</h4>
+                <p>Mission Statement</p>
+                <div class="portfolio-links">
+                  <!-- <a href="https://www.instagram.com/p/BlLjfWZArxT/media?size=m" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
     <!-- ======= Cta Section ======= -->
-    <!-- <section id="cta" class="cta">
+    <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-          <h3>Countdown!</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">Call To Action</a>
+          <h3>Election 2022</h3>
+          <!-- <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+          <h3 style="font-family: 'Poppins', sans-serif;" id="timer">23:23:23</h3>
+          <!-- <a class="cta-btn" href="#">Call To Action</a> -->
+          <p>#LesothoVotes2022</p>
         </div>
 
       </div>
-    </section> --><!-- End Cta Section -->
+    </section><!-- End Cta Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -413,6 +453,27 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script type="text/javascript">
+    var countDownDate = new Date("Jan 1, 2022 08:00:00").getTime();
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML = days + "d " + hours + ":" + minutes + ":" + seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "Vote Wisely!";
+      }
+    }, 1000)
+  </script>
 </body>
 
 </html>

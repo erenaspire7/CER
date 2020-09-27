@@ -51,9 +51,16 @@
               <p>Amount: M<%= values.amount_paid %></p>
               <p>Ref_No: CER_<%= values.member_cell %></p>
 
-              <a href="/">
-                <button type="button" class="btn myBtn">Paid!</button>
-              </a>
+              <!-- <a href="/">
+                
+              </a> -->
+
+              <form method="GET" action="inform">
+                <input type="hidden" name="ref_no" value="CER_<%= values.member_cell %>">
+                <input type="hidden" name="amount" value="M<%= values.amount_paid %>">
+                <input type="hidden" name="member_num" value="<%= values.member_cell %>"">
+                <button type="submit" class="btn myBtn">Paid!</button>
+              </form>
             </div>
           </div>
         </div>

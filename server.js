@@ -38,6 +38,30 @@ MongoClient.connect(connectionString, {
     const db = client.db("CER");
     const membersTable = db.collection("Members");
 
+    app.get("/inform", (req, res) => {
+      data = {
+        ref_no: req.query.ref_no,
+        amount: req.query.amount,
+        member_num: req.query.member_num,
+      };
+
+      let update = {
+        from: "inform@lesothocer.org",
+        to: "lesothocer@gmail.com",
+        subject: "Pay Confirmed!",
+        text: `Ref No: ${data.ref_no}\nAmount: ${data.amount}\nPhone Number: ${data.member_num}`,
+      };
+
+      mailTransporter.sendMail(update, function (err, data) {
+        if (err) {
+          console.log("Error Occurs");
+        } else {
+          console.log("Email sent successfully");
+          res.redirect("/");
+        }
+      });
+    });
+
     app.post("/send", (req, res) => {
       let currentDate = new Date();
 
@@ -84,8 +108,7 @@ MongoClient.connect(connectionString, {
       membersTable
         .insertOne(membership_details)
         .then(() => {
-          res.render('pay.ejs', {values: membership_details});
-          
+          res.render("pay.ejs", { values: membership_details });
         })
         .catch((err) => console.log(err.message));
     });
@@ -108,10 +131,9 @@ MongoClient.connect(connectionString, {
       mailTransporter.sendMail(mailDetails, function (err, data) {
         if (err) {
           console.log("Error Occurs");
-          
         } else {
           console.log("Email sent successfully");
-          res.redirect('email_sent.html')
+          res.redirect("email_sent.html");
         }
       });
     });
