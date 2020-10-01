@@ -29,6 +29,7 @@ let mailTransporter = nodemailer.createTransport({
   },
 });
 
+// nodemailer.createTransport({})
 MongoClient.connect(connectionString, {
   useUnifiedTopology: true,
 })
@@ -121,16 +122,18 @@ MongoClient.connect(connectionString, {
         message: req.body.message,
       };
 
-      let mailDetails = {
-        from: contact_details.email,
-        to: "lesothocer@gmail.com",
+      const mailDetails = {
+        from: `${contact_details.name}, <${contact_details.email}>`,
+        to: "yusuffjamal3@gmail.com",
         subject: contact_details.subject,
-        text: contact_details.message,
+        text: `Name: ${contact_details.name}.\n Email: ${contact_details.email}\n\n ${contact_details.message}`,
       };
 
+      // console.log(mailDetails.from);
       mailTransporter.sendMail(mailDetails, function (err, data) {
         if (err) {
           console.log("Error Occurs");
+          console.log(err.message);
         } else {
           console.log("Email sent successfully");
           res.redirect("email_sent.html");
