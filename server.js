@@ -124,7 +124,7 @@ MongoClient.connect(connectionString, {
 
       const mailDetails = {
         from: `${contact_details.name}, <${contact_details.email}>`,
-        to: "yusuffjamal3@gmail.com",
+        to: "lesothocer@gmail.com",
         subject: contact_details.subject,
         text: `Name: ${contact_details.name}.\n Email: ${contact_details.email}\n\n ${contact_details.message}`,
       };
