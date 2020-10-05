@@ -104,8 +104,10 @@ MongoClient.connect(connectionString, {
           ", " +
           (currentDate.getFullYear() + 1),
         amount_paid: req.body.amount,
+        member_status: req.body.member_type,
       };
 
+      console.log(membership_details.member_status)
       membersTable
         .insertOne(membership_details)
         .then(() => {

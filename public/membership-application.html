@@ -152,10 +152,21 @@
                   <input type="number" name="amount" class="form-control" id="amount" placeholder="Amount" min="2" required />
                   
                 </div>
+                <div class="col-md-12 text-center">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="member_type" id="gen_member" value="gen_member" required>
+                    <label class="form-check-label" for="gen_member">General Member</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="member_type" id="exec_member" value="exec_member" >
+                    <label class="form-check-label" for="exec_member">Executive Member</label>
+                  </div>
+                  
+                </div>
                 <div class="col-md-12 form-group text-center">
                   <!-- Button trigger modal -->
                   <div class="form-check form-check-inline text-center" style="vertical-align: middle;">
-                    <input class="form-check-input " type="checkbox" id="terms" value="Y" name="terms" style="height: auto;" required>
+                    <input class="form-check-input " type="checkbox" id="terms" value="Y" name="terms" style="height: auto;">
                   </div>
                   <a data-toggle="modal" data-target="#exampleModal" id="t_c">
                     Terms And Conditions

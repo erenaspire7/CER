@@ -47,7 +47,8 @@
               Payment Details
             </div>
             <div class="card-body" style="font-style: italic">
-              <p>Pay: Mpesa - 57096892</p>
+              <p>Mpesa - 57096892</p>
+              <p>Econet - 69194360</p>
               <p>Amount: M<%= values.amount_paid %></p>
               <p>Ref_No: CER_<%= values.member_cell %></p>
 
@@ -61,6 +62,7 @@
                 <input type="hidden" name="member_num" value="<%= values.member_cell %>"">
                 <button type="submit" class="btn myBtn">Paid!</button>
               </form>
+              <p style="margin-top: 30px;">After payment has been confirmed, you'd be added to our whatsapp group</p>
             </div>
           </div>
         </div>
