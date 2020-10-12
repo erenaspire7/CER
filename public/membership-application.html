@@ -112,8 +112,91 @@
               </div>
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="constituency" class="form-control" id="constituency" placeholder="Constituency" minlength="4" required/>
+                  <!-- <input type="text" name="constituency" class="form-control" id="constituency" placeholder="Constituency" minlength="4" required/> -->
                   
+                  <select class="custom-select my-1 mr-sm-2" id="constituency" name="constituency" required> 
+                    <option value="">Constituency</option>
+                    <option value="MECHECHANE">MECHECHANE</option>
+                    <option value="HOLOLO">HOLOLO</option>
+                    <option value="MOTETE">MOTETE</option>
+                    <option value="QALO">QALO</option>
+                    <option value="BUTHA-BUTHE">BUTHA-BUTHE</option>
+                    <option value="MALIBAMATŠO">MALIBAMATŠO</option>
+                    <option value="MPHOSONG">MPHOSONG</option>
+                    <option value="THABA-PHATŠOA">THABA-PHATŠOA</option>
+                    <option value="MAHOBONG">MAHOBONG</option>
+                    <option value="PELA-TŠOEU">PELA-TŠOEU</option>
+                    <option value="MATLAKENG">MATLAKENG</option>
+                    <option value="LERIBE">LERIBE</option>
+                    <option value="HLOTSE">HLOTSE</option>
+                    <option value="TSIKOANE">TSIKOANE</option>
+                    <option value="MAPUTSOE">MAPUTSOE</option>
+                    <option value="LIKHETLANE">LIKHETLANE</option>
+                    <option value="PEKA">PEKA</option>
+                    <option value="KOLONYAMA">KOLONYAMA</option>
+                    <option value="MOSALEMANE">MOSALEMANE</option>
+                    <option value="MAKHOROANA">MAKHOROANA</option>
+                    <option value="BELA-BELA">BELA-BELA</option>
+                    <option value="MALIMONG">MALIMONG</option>
+                    <option value="KHAFUNG">KHAFUNG</option>
+                    <option value="TEYATEYANENG">TEYATEYANENG</option>
+                    <option value="TSOANA-MAKHULO">TSOANA-MAKHULO</option>
+                    <option value="THUPA-KUBU">THUPA-KUBU</option>
+                    <option value="BEREA">BEREA</option>
+                    <option value="KHUBETSOANA">KHUBETSOANA</option>
+                    <option value="MABOTE">MABOTE</option>
+                    <option value="MOTIMPOSO">MOTIMPOSO</option>
+                    <option value="STADIUM AREA">STADIUM AREA</option>
+                    <option value="MASERU">MASERU</option>
+                    <option value="THETSANE">THETSANE</option>
+                    <option value="QOALING">QOALING</option>
+                    <option value="LITHOTENG">LITHOTENG</option>
+                    <option value="LITHABANENG">LITHABANENG</option>
+                    <option value="ABIA">ABIA</option>
+                    <option value="THABA-BOSIU">THABA-BOSIU</option>
+                    <option value="MACHACHE">MACHACHE</option>
+                    <option value="THABA-PUTSOA">THABA-PUTSOA</option>
+                    <option value="MAAMA">MAAMA</option>
+                    <option value="KORO-KORO">KORO-KORO</option>
+                    <option value="QEME">QEME</option>
+                    <option value="ROTHE">ROTHE</option>
+                    <option value="MATSIENG">MATSIENG</option>
+                    <option value="MAKHALENG">MAKHALENG</option>
+                    <option value="MALETSUNYANE">MALETSUNYANE</option>
+                    <option value="THABA-PHECHELA">THABA-PHECHELA</option>
+                    <option value="KOLO">KOLO</option>
+                    <option value="THABA-TŠOEU (MATELILE)">THABA-TŠOEU (MATELILE)</option>
+                    <option value="MALIEPETSANE">MALIEPETSANE</option>
+                    <option value="THABANA-MORENA">THABANA-MORENA</option>
+                    <option value="LIKHOELE">LIKHOELE</option>
+                    <option value="QALABANE">QALABANE</option>
+                    <option value="MAFETENG">MAFETENG</option>
+                    <option value="TAUNG">TAUNG</option>
+                    <option value="QHALASI">QHALASI</option>
+                    <option value="MOHALE’S HOEK">MOHALE’S HOEK</option>
+                    <option value="MEKALING">MEKALING</option>
+                    <option value="QAQATU">QAQATU</option>
+                    <option value="MPHARANE">MPHARANE</option>
+                    <option value="KETANE">KETANE</option>
+                    <option value="HLOAHLOENG">HLOAHLOENG</option>
+                    <option value="TELE">TELE</option>
+                    <option value="MOYENI">MOYENI</option>
+                    <option value="SEBAPALA">SEBAPALA</option>
+                    <option value="MOUNT MOOROSI">MOUNT MOOROSI</option>
+                    <option value="QHOALI">QHOALI</option>
+                    <option value="QACHA’S NEK">QACHA’S NEK</option>
+                    <option value="LEBAKENG">LEBAKENG</option>
+                    <option value="TSOELIKE">TSOELIKE</option>
+                    <option value="MANTŠONYANE">MANTŠONYANE</option>
+                    <option value="THABA-MOEA">THABA-MOEA</option>
+                    <option value="THABA-TSEKA">THABA-TSEKA</option>
+                    <option value="SEMENA">SEMENA</option>
+                    <option value="MASHAI">MASHAI</option>
+                    <option value="MALINGOANENG">MALINGOANENG</option>
+                    <option value="SENQU">SENQU</option>
+                    <option value="MOKHOTLONG">MOKHOTLONG</option>
+                    <option value="BOBATSI">BOBATSI</option>
+                  </select>
                 </div>
                 <div class="col-md-6 form-group">
                   <input type="text" class="form-control" name="district" id="district" placeholder="District" minlength="4" required />
@@ -163,6 +246,10 @@
                     <label class="form-check-label" for="exec_member">Executive Member</label>
                   </div>
                   
+                </div>
+                <div class="col-md-12 text-center">
+                  <p>Mpesa - 57096892</p>
+                  <p>Econet - 69194360</p>
                 </div>
                 <div class="col-md-12 form-group text-center">
                   <!-- Button trigger modal -->
